@@ -90,6 +90,7 @@ cmd
 
 ```
 docker run --rm -e "WORKSPACE=%cd%" -e "GITHUB_TOKEN=%GITHUB_TOKEN%" -v "%cd%:/app:cached" shiftleft/scan scan
+docker run --rm -e "WORKSPACE=$(pwd)" -e GITHUB_TOKEN -e "SCAN_AUTO_BUILD=true" -v "$(pwd):/app" shiftleft/scan scan $*
 ```
 
 PowerShell and PowerShell Core
